@@ -1,0 +1,37 @@
+{
+  "de": {
+    "locale": "German",
+    "Ä": "AE",
+    "ä": "ae",
+    "Ö": "OE",
+    "ö": "oe",
+    "Ü": "UE",
+    "ü": "ue",
+    "%": "prozent",
+    "&": "und",
+    "|": "oder",
+    "∑": "summe",
+    "∞": "unendlich",
+    "♥": "liebe"
+  },
+  "vi": {
+    "locale": "Vietnamese",
+    "Đ": "D",
+    "đ": "d"
+  },
+  "fr": {
+    "locale": "French",
+    "%": "pourcent",
+    "&": "et",
+    "<": "plus petit",
+    ">": "plus grand",
+    "|": "ou",
+    "¢": "centime",
+    "£": "livre",
+    "¤": "devise",
+    "₣": "franc",
+    "∑": "somme",
+    "∞": "infini",
+    "♥": "amour"
+  }
+}
