@@ -20,6 +20,22 @@ function createMD(){
     let video = document.getElementById("video").value;
 
 
+  	if(document.getElementById("video").value.includes("https://studio.youtube.com/video")){
+  		let exp = video.split("/");
+		video = exp[4];
+  	}
+
+  	if(document.getElementById("video").value.includes("https://www.youtube.com/watch?")){
+  		let exp = video.split("=");
+		video = exp[1];
+  	}
+
+  	if(document.getElementById("video").value.includes("https://youtu.be/")){
+  		let exp = video.split("/");
+		video = exp[3];
+  	}
+
+
     let url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyB8czN_uLrtSCZnxURhWgFiGXGQCoeoMYg&id=' + video;
     //let obj;
 
@@ -47,6 +63,12 @@ function createMD(){
 
       if(document.getElementById("progetto").value !== ""){
         let idProj = document.getElementById("progetto").value;
+
+	  	if(document.getElementById("progetto").value.includes("https://scratch.mit.edu/projects/")){
+	  		let expP = idProj.split("/");
+			idProj = expP[4];
+	  	}
+
         
         string+="\n* * *";
         string+='\nIl progetto realizzato con Scratch si pu\u00F2 vedere qui sotto, altrimenti nel sito di Scratch cliccando <a href="https://scratch.mit.edu/projects/' + idProj + '" target="_blank">qui</a>.';
