@@ -23,7 +23,8 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var allText = rawFile.responseText;
-                alert(allText);
+                //alert(allText);
+                return allText;
             }
         }
     }
@@ -96,10 +97,9 @@ function createMD(){
 
       document.getElementById("image").src = out.items[0].snippet.thumbnails.maxres.url;
 
-      readTextFile("./max.txt");
-
-
-    	download(title + ".mdx",string);
+      let numMax = readTextFile("./max.txt");
+      
+    	download(numMax + title + ".mdx",string);
 
     })
     .catch(err => { throw err });
