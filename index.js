@@ -12,26 +12,6 @@ function download(filename, text) {
 }
 
 
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var allText = rawFile.responseText;
-                //alert(allText);
-                return allText;
-            }
-        }
-    }
-    rawFile.send(null);
-}
-
-
 function createMD(){
 
   if(document.getElementById("video").value !== ""){
@@ -97,9 +77,7 @@ function createMD(){
 
       document.getElementById("image").src = out.items[0].snippet.thumbnails.maxres.url;
 
-      let numMax = readTextFile("./max.txt");
-      
-    	download(numMax + title + ".mdx",string);
+      download(title + ".mdx",string);
 
     })
     .catch(err => { throw err });
