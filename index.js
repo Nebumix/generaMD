@@ -98,8 +98,7 @@ function createMD(){
       document.getElementById("image").src = out.items[0].snippet.thumbnails.maxres.url;
 
       let numMax = readTextFile("./max.txt");
-
-
+      
     	download(numMax + title + ".mdx",string);
 
     })
