@@ -56,6 +56,7 @@ function createMD(){
     	string+="\ncategory: Didattica con Scratch";
     	string+="\ntags: ['Geometria', 'Scratch2']";
     	string+="\nthumbnail: " + title + ".jpg";
+	string+="\nthumbnailText: " + out.items[0].snippet.title;
     	string+="\n---";
     	string+="\n\n" + out.items[0].snippet.description;
       string+="\n\n`youtube: https://www.youtube.com/watch?v=" + out.items[0].id + "`";
