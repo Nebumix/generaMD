@@ -80,6 +80,7 @@ function createMD(){
         document.getElementById("image").src = out.items[0].snippet.thumbnails.maxres.url;
         document.getElementById("error").innerHTML = "";
       }else{
+        document.getElementById("image").src = "";
         document.getElementById("error").innerHTML += "Non è possibile recuperare l'immagine";
       }
 
