@@ -75,7 +75,13 @@ function createMD(){
         string+='\n<iframe src="https://scratch.mit.edu/projects/' + idProj + '/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>';
       }
 
-      document.getElementById("image").src = out.items[0].snippet.thumbnails.maxres.url;
+      //console.log(out.items[0].snippet.thumbnails.maxres);
+      if(out.items[0].snippet.thumbnails.maxres !== undefined){
+        document.getElementById("image").src = out.items[0].snippet.thumbnails.maxres.url;
+        document.getElementById("error").innerHTML = "";
+      }else{
+        document.getElementById("error").innerHTML += "Non è possibile recuperare l'immagine";
+      }
 
       download(title + ".mdx",string);
 
