@@ -53,9 +53,11 @@ function createMD(){
     	string+="---";
     	string+="\ntitle: " + out.items[0].snippet.title;
     	string+="\ndate: "+ out.items[0].snippet.publishedAt;
-    	string+="\ncategory: Didattica con Scratch";
-    	string+="\ntags: ['Geometria', 'Scratch2']";
+    	string+="\ncategory: Algoritmi con Scratch, Altri linguaggi, Chiacchiere computazionali, Coding ed elettronica, Conoscere Scratch, Corso base di Scratch, Didattica con Scratch, Giochi con Scratch, Off Topic, Top 10";
+    	string+="\ntags: ['Cicli', 'Pixel Art', 'Geografia', 'Matematica', 'Geometria', 'Top 10', 'Trucchi Scratch', 'Pillole di Scratch', 'Platform', 'Python', 'Minecraft', 'Raspberry PI', 'Giochi classici', 'Gameplay', 'Natale', 'Editor Grafico', '#supereasy', 'Informatica', 'Musica', 'Sparare', 'Animazioni', 'Variabili e Liste', 'Sicurezza informatica', 'Ingegneria sociale', 'C#', 'Unity', 'Gli Sprite', 'Controlli e condizioni', 'Interazioni', 'Storytelling', 'I messaggi', 'Cloni', 'Deep web e Dark web', 'Sport', 'Strumenti Scratch', 'Javascript e HTML5', 'Open source', 'Microbit', 'makecode', 'Fisica', 'Guidare', 'Shop', 'Scratch2']";
+      string+="\nkeywords: ['Scratch', 'Scratch3']";
     	string+="\nthumbnail: " + title + ".jpg";
+      string+="\nthumbnailText: " + out.items[0].snippet.title;
     	string+="\n---";
     	string+="\n\n" + out.items[0].snippet.description;
       string+="\n\n`youtube: https://www.youtube.com/watch?v=" + out.items[0].id + "`";
@@ -78,6 +80,8 @@ function createMD(){
       //console.log(out.items[0].snippet.thumbnails.maxres);
       if(out.items[0].snippet.thumbnails.maxres !== undefined){
         document.getElementById("image").src = out.items[0].snippet.thumbnails.maxres.url;
+        document.getElementById("linkImage").href = out.items[0].snippet.thumbnails.maxres.url;
+        document.getElementById("linkImage").download = title;
         document.getElementById("error").innerHTML = "";
       }else{
         document.getElementById("image").src = "";
